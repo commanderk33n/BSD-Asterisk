@@ -6,8 +6,8 @@ create a asterisk VoIP-Server in FreeBSD
    ```/usr/local/etc/rc.d/asterisk start```<br>
    check if server is running:<br>
    ```ps ax | grep asterisk```<br>
-   to run server automatically on startup add the following line into ```/etc/rc.conf```:
-   ```asterisk_enable="YES"```<br>
+   to run server automatically on startup add the following line into ```/etc/rc.conf```:<br>
+   ```asterisk_enable="YES"```
 3. Initial Configuration<br>
    location of the config-files:<br>
    ```/usr/local/etc/asterisk/```<br>
