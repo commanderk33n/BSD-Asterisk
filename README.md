@@ -13,7 +13,7 @@ create a asterisk VoIP-Server in FreeBSD
 3. Initial Configuration
    location of the config-files:<br>
    ```/usr/local/etc/asterisk/```<br>
-   sip.conf example:
+   basic sip.conf example:
    ```[general]
       context=unauthenticated ; default context for incoming calls
       allowguest=no ; disable unauthenticated calls
@@ -35,9 +35,21 @@ create a asterisk VoIP-Server in FreeBSD
       allow=all
       textsupport=yes
       [alice](office-phone)
-      [bob](office-phone)```
-      
-      
-      
-    
-5. 
+      [bob](office-phone) 
+      ```
+   basic extension.conf example:
+   ```
+   [general]
+   [LocalSets]
+   exten => 99,1,VoiceMailMain()
+   exten = 1337,1,Answer()
+   same = n,Wait(1)
+   same = n,Playback(hello-world)
+   same = n,Hangup()
+
+   exten = 2000, 1, Dial(SIP/alice)
+   exten = 2001, 1, Dial(SIP/bob)
+   ```
+5. Monitoring
+   enter asterisk CLI
+6. iax.conf
