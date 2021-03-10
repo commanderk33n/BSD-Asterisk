@@ -51,5 +51,25 @@ create a asterisk VoIP-Server in FreeBSD
    exten = 2001, 1, Dial(SIP/bob)
    ```
 5. Monitoring<br>
-   enter asterisk CLI
+   enter asterisk CLI with the following command:
+   ```asterisk -r```
+   show all sip user:
+   ```sip show peers```
+   show all call connections:
+   ```core show channels```
+   find useful commands:
+   ```core show help```
+   get info how to use a command:
+   ```core show help sip show channel```
+   
+   reload configuration files:
+   ```
+   sip reload     # sip.conf neu laden
+   iax2 reload    # iax.conf neu laden
+   core reload    # gesamte Konfiguration neu laden
+   ```
+   stop server:
+   ```
+   core stop now
+   ```
 6. iax.conf<br>
