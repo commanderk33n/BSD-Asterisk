@@ -63,9 +63,9 @@ create a asterisk VoIP-Server in FreeBSD
    
    reload configuration files:
    ```
-   sip reload     # sip.conf neu laden
-   iax2 reload    # iax.conf neu laden
-   core reload    # gesamte Konfiguration neu laden
+   sip reload     # reload sip.conf 
+   iax2 reload    # reload iax.conf 
+   core reload    # reload entire configuration
    ```
    stop server:<br>
    ```core stop now ```
