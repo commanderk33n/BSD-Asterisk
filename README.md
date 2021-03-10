@@ -51,6 +51,6 @@ create a asterisk VoIP-Server in FreeBSD
    exten = 2000, 1, Dial(SIP/alice)
    exten = 2001, 1, Dial(SIP/bob)
    ```
-5. Monitoring
+5. Monitoring<br>
    enter asterisk CLI
-6. iax.conf
+6. iax.conf<br>
