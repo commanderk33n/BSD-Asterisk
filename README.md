@@ -26,7 +26,7 @@ create a asterisk VoIP-Server in FreeBSD
    context=LocalSets ; this is where calls from the device will enter the dialplan
    host=dynamic ; the device will register with asterisk
    nat=yes ; assume device is behind NAT
-   secret=zgb; a secure password for this device -- DON'T USE THIS PASSWORD!
+   secret=123; a secure password for this device -- DON'T USE THIS PASSWORD!
    dtmfmode=auto ; accept touch-tones from the devices,
    negotiated automatically
    disallow=all ; reset which voice codecs this device will accept or offer
@@ -84,7 +84,7 @@ create a asterisk VoIP-Server in FreeBSD
    [Asterisk-Server-A]
    type=peer
    username=Asterisk-Server-B
-   secret=<gemeinsames Passwort>
+   secret=<shared secret>
    host=<IP Server B>
    auth=md5,rsa
    trunk=yes
@@ -106,7 +106,7 @@ create a asterisk VoIP-Server in FreeBSD
    [Asterisk-Server-B]
    type=peer
    username=Asterisk-Server-A
-   secret=<gemeinsames Passwort>
+   secret=<shared secret>
    host=<IP Server A>
    auth=md5,rsa
    trunk=yes
