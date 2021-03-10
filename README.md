@@ -27,8 +27,7 @@ create a asterisk VoIP-Server in FreeBSD
    host=dynamic ; the device will register with asterisk
    nat=yes ; assume device is behind NAT
    secret=123; a secure password for this device -- DON'T USE THIS PASSWORD!
-   dtmfmode=auto ; accept touch-tones from the devices,
-   negotiated automatically
+   dtmfmode=auto ; accept touch-tones from the devices, negotiated automatically
    disallow=all ; reset which voice codecs this device will accept or offer
    allow=ulaw ; which audio codecs to accept from, and request to, the device
    allow=alaw ; in the order we prefer
