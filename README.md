@@ -69,7 +69,49 @@ create a asterisk VoIP-Server in FreeBSD
    core reload    # gesamte Konfiguration neu laden
    ```
    stop server:<br>
-   ```
-   core stop now
-   ```
+   ```core stop now ```
 6. iax.conf<br>
+   Server A iax.conf example:
+   ```
+   [general]
+   bindport=4569
+   bindaddr=192.168.xxx.xxx
+   externhost=xxx.xxx.xxx.xxx
+   bandwidth=high
+   allow=all
+   language=de
+
+   [Asterisk-Server-A]
+   type=peer
+   username=Asterisk-Server-B
+   secret=<gemeinsames Passwort>
+   host=<IP Server B>
+   auth=md5,rsa
+   trunk=yes
+   qualify=yes
+   encryption=yes
+   forceencryption=yes
+   context=LocalSets
+   ```
+   Server B iax.conf example:
+   ```
+   [general]
+   bindport=4569
+   bindaddr=192.168.xxx.xxx
+   externhost=xxx.xxx.xxx.xxx
+   bandwidth=high
+   allow=all
+   language=de
+
+   [Asterisk-Server-B]
+   type=peer
+   username=Asterisk-Server-A
+   secret=<gemeinsames Passwort>
+   host=<IP Server A>
+   auth=md5,rsa
+   trunk=yes
+   qualify=yes
+   encryption=yes
+   forceencryption=yes
+   context=LocalSets
+   ```
