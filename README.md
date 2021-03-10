@@ -50,7 +50,7 @@ create a asterisk VoIP-Server in FreeBSD
    exten = 2000, 1, Dial(SIP/alice)
    exten = 2001, 1, Dial(SIP/bob)
    ```
-5. Monitoring<br>
+5. monitoring&controlling<br>
    enter asterisk CLI with the following command:<br>
    ```asterisk -r```<br>
    show all sip user:<br>
