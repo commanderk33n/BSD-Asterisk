@@ -96,6 +96,6 @@ create a asterisk VoIP-Server in FreeBSD
    exten => 09021001,1,Dial(IAX2/ast2/1001)
    ;          ^   ^               ^     ^
    ;          |   |               |     |
-   ; virt.Vorwahl ext      Verbindung  ext
+   ; virt.prefix ext      connection   ext
    ```
    SIP-User with the number 1001 on Server B is now callable with the number 09021001
