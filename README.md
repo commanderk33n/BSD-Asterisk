@@ -72,44 +72,30 @@ create a asterisk VoIP-Server in FreeBSD
    Server A iax.conf example:
    ```
    [general]
-   bindport=4569
-   bindaddr=192.168.xxx.xxx
-   externhost=xxx.xxx.xxx.xxx
-   bandwidth=high
-   allow=all
-   language=de
-
-   [Asterisk-Server-A]
-   type=peer
-   username=Asterisk-Server-B
-   secret=<shared secret>
-   host=<IP Server B>
-   auth=md5,rsa
+   [ast2]
+   host=192.168.0.XX
+   type=friend
    trunk=yes
    qualify=yes
-   encryption=yes
-   forceencryption=yes
+   secret=1234
    context=LocalSets
    ```
    Server B iax.conf example:
    ```
    [general]
-   bindport=4569
-   bindaddr=192.168.xxx.xxx
-   externhost=xxx.xxx.xxx.xxx
-   bandwidth=high
-   allow=all
-   language=de
-
-   [Asterisk-Server-B]
-   type=peer
-   username=Asterisk-Server-A
-   secret=<shared secret>
-   host=<IP Server A>
-   auth=md5,rsa
+   [ast1]
+   host=192.168.0.XX
+   type=friend
    trunk=yes
    qualify=yes
-   encryption=yes
-   forceencryption=yes
+   secret=1234
    context=LocalSets
    ```
+   Dialplan example:
+   ```
+   exten => 09021001,1,Dial(IAX2/ast2/1001)
+   ;          ^   ^               ^     ^
+   ;          |   |               |     |
+   ; virt.Vorwahl ext      Verbindung  ext
+   ```
+   SIP-User with the number 1001 on Server B is now callable with the number 09021001
