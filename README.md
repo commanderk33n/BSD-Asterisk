@@ -69,7 +69,19 @@ create a asterisk VoIP-Server in FreeBSD
    ```
    stop server:<br>
    ```core stop now ```
-6. iax.conf<br>
+6. debuggin and logs<br>
+   logfile location can be configured in asterisk.conf<br>
+   edit logger.conf to enalbe specific debug output to your filesystem:<br>
+   ```
+   [logfiles]
+   debug_log_123456 => notice,warning,error,debug,verbose,dtmf
+   ```
+   enable/disable live debug in CLI:
+   ```
+   sip set debug on/off
+   iax2 set debug on/off
+   ```
+8. iax.conf<br>
    Server A iax.conf example:
    ```
    [general]
