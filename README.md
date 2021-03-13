@@ -69,6 +69,12 @@ create a asterisk VoIP-Server in FreeBSD
    ```
    stop server:<br>
    ```core stop now ```
+   getting useful informations:
+   ```
+   sip show channel     # Show detailed SIP channel info
+   sip show domains     # List our local SIP domains
+   sip show history     # Show SIP dialog history
+   ```
 6. debuggin and logs<br>
    logfile location can be configured in asterisk.conf<br>
    edit logger.conf to enalbe specific debug output to your filesystem:<br>
