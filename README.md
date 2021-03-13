@@ -68,7 +68,7 @@ create a asterisk VoIP-Server in FreeBSD
    core reload    # reload entire configuration
    ```
    stop server:<br>
-   ```core stop now ```
+   ```core stop now ```<br>
    getting useful informations:
    ```
    sip show channel     # Show detailed SIP channel info
@@ -117,4 +117,4 @@ create a asterisk VoIP-Server in FreeBSD
    ;          |   |               |     |
    ; virt.prefix ext      connection   ext
    ```
-   SIP-User with the number 1001 on Server B is now callable with the number 09021001
+   SIP-User with the number 1001 on Server B is callable with the number 09021001
